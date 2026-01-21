@@ -28,4 +28,7 @@ jobs:
           path: .
 
       - name: Print secret value
-          run: 'echo "Message: ${{ secrets.MY_MESSAGE }}"'
+          env:
+            MY_SECRET: ${{ secrets.MY_MESSAGE }}
+          run:
+            echo "Message: $MY_SECRET"
